@@ -30,6 +30,20 @@ describe("menu Data Generator", () => {
   });
   
   
+  it("works with one parent 2 childs, creating correct data structure", () => {
+    const data = ["parent1/parent1child","parent1/parent1child2"];
+
+    const expectedResult = [
+      {
+        title: "parent1",
+        data: ["parent1child","parent1child2"]
+      }
+    ];
+
+    const actualResult = createMenuData(data);
+    expect(actualResult).toMatchObject(expectedResult);
+  });
+  
   
   
   it.skip("creates correct data structure ", () => {
