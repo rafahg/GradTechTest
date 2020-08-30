@@ -1,10 +1,29 @@
 
 function createMenuData(data) {
-
+ 
 }
 
 describe("menu Data Generator", () => {
-    it("creates correct data structure ", () => {
+    
+  it("works in the simple case scenario, creating correct data structure", () => {
+    const data = [
+      "parent1/parent1child"];
+
+    const expectedResult = [
+      {
+        title: "parent1",
+        data: ["parent1child"]
+      }
+    ];
+
+    const actualResult = createMenuData(data);
+    expect(actualResult).toMatchObject(expectedResult);
+  });
+  
+  
+  
+  
+  it.skip("creates correct data structure ", () => {
       const data = [
         "parent1/parent1child",
         "parent1/parent1child2",
