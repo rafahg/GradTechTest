@@ -1,17 +1,27 @@
 function createMenuData(data) {
-
-  let splitData = data[0].split("/");
+  let splitData = data.map(item => item.split('/'));
+  let parent = [];
+  let childs = [];
+  
+  splitData.forEach (function(item){
+    parent.push(item[0]);
+    childs.push(item[1]);
+  })
+  
+  let uniqParent = [...new Set(parent)]; // Eliminates duplicate parents.
+  
   let dataSolution = [];
   let dataList = {};
-  
-  dataList.title = splitData[0];
-  dataList.data = [];
-  dataList.data.push(splitData[1]);
+
+  dataList.title = uniqParent[0];
+  dataList.data = childs;
   dataSolution.push(dataList);
-  
+
   return dataSolution;
 
+
 }
+
 
 describe("menu Data Generator", () => {
     
