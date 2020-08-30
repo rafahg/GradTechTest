@@ -3,6 +3,7 @@ please do not fork it!
 
 ## Setup
 install yarn or npm globally 
+install 
 
 run `yarn` or `npm install`
 
