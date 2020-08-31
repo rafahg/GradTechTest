@@ -5,7 +5,10 @@
 | [CHALLENGE](#challenge)
 - - -
 <br>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 07906e85cd03dbea11d46e3b4029e4f699cee74b
 
 ## SETUP
   - Clone this repository.
@@ -89,7 +92,6 @@ Links to Jest and EsLint documentation for a more detailed explanation:
 - - -
 
 ## CHALLENGE
-- - -
 
 Write some code to implement the function `createMenuData`
 
