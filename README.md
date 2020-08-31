@@ -88,7 +88,6 @@ Links to Jest and EsLint documentation for a more detailed explanation:
 - - -
 
 ## CHALLENGE
-- - -
 
 Write some code to implement the function `createMenuData`
 
