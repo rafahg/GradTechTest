@@ -17,7 +17,7 @@ function createMenuData(data) {
     childs.push(item[1]);
   })
   
-  let uniqParent = [...new Set(parent)].sort(); // Eliminates duplicate parents.
+  let uniqParent = [...new Set(parent)]; // Eliminates duplicate parents.
   
   function createData(parent) {
  
@@ -36,7 +36,7 @@ function createMenuData(data) {
   
   dataSolution = uniqParent.map(createData);
   
-  return dataSolution;
+    return dataSolution;
 
 }
 
