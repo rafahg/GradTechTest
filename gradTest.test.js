@@ -79,7 +79,23 @@ describe("menu Data Generator", () => {
     expect(actualResult).toMatchObject(expectedResult);
   });
   
-  
+  it("works with 2 parents given in any order, 2 childs, creating correct data structure", () => {
+    const data = ["parent2/parent2child","parent1/parent1child2","parent1/parent1child","parent2/parent2child2"];
+
+    const expectedResult = [
+      {
+        title: "parent1",
+        data: ["parent1child", "parent1child2"]
+      },
+      { title: "parent2", data: ["parent2child", "parent2child2"] }
+    ];
+
+    const actualResult = createMenuData(data);
+    expect(actualResult).toMatchObject(expectedResult);
+  });
+
+
+
   it.skip("creates correct data structure ", () => {
       const data = [
         "parent1/parent1child",
