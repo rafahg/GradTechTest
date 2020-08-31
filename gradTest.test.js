@@ -1,11 +1,18 @@
 function createMenuData(data) {
   
-  let splitData = data.map(item => item.split('/'));
+  let refinedData = [];
+  data.forEach(function(item){
+    if(item.includes('/')){
+      refinedData.push(item)
+    }
+  })
+
+  let sortedData = refinedData.sort().map(item => item.split("/"));
   let parent = [];
   let childs = [];
   let dataSolution = [];
    
-  splitData.forEach (function(item){
+  sortedData.forEach (function(item){
     parent.push(item[0]);
     childs.push(item[1]);
   })
