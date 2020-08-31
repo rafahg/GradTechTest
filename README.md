@@ -5,7 +5,7 @@
 | [CHALLENGE](#challenge)
 - - -
 <br>
-<br>
+
 
 ## SETUP
   - Clone this repository.
@@ -97,7 +97,7 @@ Use the test runner `jest` to run the `gradTest.test.js`
 
 I have included my approach to the challenge in this separeted Readme file.
 
- [Challenge Approach]()
+ [Challenge Approach](https://github.com/rafahg/GradTechTest/blob/master/APPROACH.md)
 
 ### TIPS
 
