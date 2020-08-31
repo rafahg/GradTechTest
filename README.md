@@ -5,7 +5,6 @@
 | [CHALLENGE](#challenge)
 - - -
 <br>
-<br>
 
 ## SETUP
   - Clone this repository.
