@@ -9,7 +9,7 @@ function createMenuData(data) {
     childs.push(item[1]);
   })
   
-  let uniqParent = [...new Set(parent)]; // Eliminates duplicate parents.
+  let uniqParent = [...new Set(parent)].sort(); // Eliminates duplicate parents.
   
   function createData(parent) {
  
