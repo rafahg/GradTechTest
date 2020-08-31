@@ -2,7 +2,8 @@ function createMenuData(data) {
   let splitData = data.map(item => item.split('/'));
   let parent = [];
   let childs = [];
-  
+  let dataSolution = [];
+   
   splitData.forEach (function(item){
     parent.push(item[0]);
     childs.push(item[1]);
@@ -10,15 +11,24 @@ function createMenuData(data) {
   
   let uniqParent = [...new Set(parent)]; // Eliminates duplicate parents.
   
-  let dataSolution = [];
+  function createData(parent) {
+ 
   let dataList = {};
 
-  dataList.title = uniqParent[0];
-  dataList.data = childs;
-  dataSolution.push(dataList);
-
+  dataList.title = parent;
+  dataList.data = [];
+  
+  childs.forEach(function(item){
+    if (item.includes(parent)){
+      dataList.data.push(item);
+    }
+  })
+    return dataList;
+  }
+  
+  dataSolution = uniqParent.map(createData);
+  
   return dataSolution;
-
 
 }
 
@@ -55,19 +65,15 @@ describe("menu Data Generator", () => {
   });
   
   it("works with 2 parents, 2 childs, creating correct data structure", () => {
-    const data = ["parent1/parent1child","parent1/parent1child2",
-      "parent2/parent2child","parent2/parent2child2"];
+    const data = ["parent1/parent1child","parent1/parent1child2","parent2/parent2child","parent2/parent2child2"];
 
     const expectedResult = [
       {
         title: "parent1",
-        data: ["parent1child","parent1child2"]
+        data: ["parent1child", "parent1child2"]
       },
-      {
-        title: "parent2",
-        data: ["parent2child","parent2child2"]
-
-    }];
+      { title: "parent2", data: ["parent2child", "parent2child2"] }
+    ];
 
     const actualResult = createMenuData(data);
     expect(actualResult).toMatchObject(expectedResult);
