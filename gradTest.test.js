@@ -10,8 +10,6 @@ function createMenuData(data) {
   let sortedData = refinedData.sort().map(item => item.split("/"));
   let parent = [];
   let childs = [];
-  let dataSolution = [];
-   
   sortedData.forEach (function(item){
     parent.push(item[0]);
     childs.push(item[1]);
@@ -20,26 +18,21 @@ function createMenuData(data) {
   let uniqParent = [...new Set(parent)]; // Eliminates duplicate parents.
   
   function createData(parent) {
- 
-  let dataList = {};
-
-  dataList.title = parent;
-  dataList.data = [];
-  
-  childs.forEach(function(item){
-    if (item.includes(parent)){
-      dataList.data.push(item);
-    }
-  })
+    let dataList = {};
+    dataList.title = parent;
+    dataList.data = [];
+    childs.forEach(function(item){
+      if (item.includes(parent)){
+        dataList.data.push(item);
+      }
+    })
     return dataList;
   }
-  
-  dataSolution = uniqParent.map(createData);
-  
-    return dataSolution;
-
+  return uniqParent.map(createData);
 }
 
+
+// Test suite --------- //
 
 describe("menu Data Generator", () => {
     
