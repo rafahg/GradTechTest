@@ -1,4 +1,5 @@
 function createMenuData(data) {
+  
   let splitData = data.map(item => item.split('/'));
   let parent = [];
   let childs = [];
@@ -95,8 +96,7 @@ describe("menu Data Generator", () => {
   });
 
 
-
-  it.skip("creates correct data structure ", () => {
+  it("creates correct data structure ", () => {
       const data = [
         "parent1/parent1child",
         "parent1/parent1child2",
