@@ -1,6 +1,12 @@
 function createMenuData(data) {
   
-  
+  const refinedData = [];
+  data.forEach(function(item){
+    if(item.includes('/')){
+      refinedData.push(item)
+    }
+  })
+
   const dataSplit = refinedData.map((item) => item.split('/')).sort();
 
   let formattedData = [
