@@ -6,7 +6,7 @@
 
 To work on this challenge I have used a version control methodology.
 
-Once I cloned the TechTest to my system and created a new repository I created a new git branch to work in it and not compromise at any moment the code in the master branch.
+Once I cloned the TechTest to my system and created a new repository I created a new git branch to work in it, to not compromise at any moment the code in the master branch.
 
 I have used git commits at any step which involved any significant change on the code.
 
