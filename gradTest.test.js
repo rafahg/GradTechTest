@@ -6,7 +6,7 @@ function createMenuData(data) {
       refinedData.push(item)
     }
   })
-  const dataSplit = refinedData.map((item) => item.split('/')).sort();
+  const dataSplit = refinedData.map(item => item.split('/')).sort();
 
   let formattedData = [
     {
@@ -16,10 +16,10 @@ function createMenuData(data) {
   ];
   
   for (let i = 1; i < dataSplit.length; i++) {
-    const lastDataAdded = formattedData[formattedData.length -1];
+    const lastDataAdded = formattedData[formattedData.length - 1];
     const nextDataToCompare = dataSplit[i];
     if(lastDataAdded.title === nextDataToCompare[0]){
-      formattedData[formattedData.length -1].data.push(nextDataToCompare[1]) ;
+      formattedData[formattedData.length - 1].data.push(nextDataToCompare[1]);
     } else {
       formattedData.push({
         title: nextDataToCompare[0],
