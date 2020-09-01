@@ -93,7 +93,7 @@ Write some code to implement the function `createMenuData`
 
 Use the test runner `jest` to run the `gradTest.test.js` 
 
-I have included my approach to the challenge in this separeted Readme file.
+I have included my approach to the challenge in this separated Readme file.
 
  [Challenge Approach](https://github.com/rafahg/GradTechTest/blob/master/APPROACH.md)
 
