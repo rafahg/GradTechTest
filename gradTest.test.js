@@ -7,6 +7,13 @@ function createMenuData(data) {
       data: [dataSplit[0][1]]
     }
   ];
+  for (let i = 1; i < dataSplit.length; i++) {
+    const lastDataAdded = formattedData[formattedData.length -1];
+    const nextDataToCompare = dataSplit[i];
+    if(lastDataAdded.title === nextDataToCompare[0]){
+      formattedData[formattedData.length -1].data.push(nextDataToCompare[1])
+    }
+  }
  return formattedData;
 }
 
@@ -30,7 +37,7 @@ describe("menu Data Generator", () => {
   });
   
   
-  it.skip("works with one parent 2 childs, creating correct data structure", () => {
+  it("works with one parent 2 childs, creating correct data structure", () => {
     const data = ["parent1/parent1child","parent1/parent1child2"];
 
     const expectedResult = [
