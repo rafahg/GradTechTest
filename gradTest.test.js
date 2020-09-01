@@ -6,7 +6,6 @@ function createMenuData(data) {
       refinedData.push(item)
     }
   })
-
   const dataSplit = refinedData.map((item) => item.split('/')).sort();
 
   let formattedData = [
@@ -15,12 +14,13 @@ function createMenuData(data) {
       data: [dataSplit[0][1]]
     }
   ];
+  
   for (let i = 1; i < dataSplit.length; i++) {
     const lastDataAdded = formattedData[formattedData.length -1];
     const nextDataToCompare = dataSplit[i];
-    if(lastDataAdded.title === nextDataToCompare[0] && nextDataToCompare.length === 2){
+    if(lastDataAdded.title === nextDataToCompare[0]){
       formattedData[formattedData.length -1].data.push(nextDataToCompare[1]) ;
-    } else if (nextDataToCompare.length === 2) {
+    } else {
       formattedData.push({
         title: nextDataToCompare[0],
         data: [nextDataToCompare[1]]
@@ -120,7 +120,31 @@ describe("menu Data Generator", () => {
       expect(actualResult).toMatchObject(expectedResult);
     });
 
-    it("creates correct data structure ", () => {
+    it("Random Names, different cases", () => {
+      const data = [
+        "Ben/Paul",
+        "Carl/Peter",
+        "Alan/Peter",
+        "Carl/James",
+        "parent100/parent100child",
+        "Carl",
+        "Jonh/Sean",
+        "Ben/James"
+      ];
+  
+      const expectedResult = [
+        { title: "Alan",data: ["Peter"]},
+        { title: "Ben", data: ["James","Paul"] },
+        { title: "Carl", data: ["James","Peter"] },
+        { title: "Jonh", data: ["Sean"] },
+        { title: "parent100", data: ["parent100child"] }
+      ];
+  
+      const actualResult = createMenuData(data);
+      expect(actualResult).toMatchObject(expectedResult);
+    });
+
+    it("Sorted parents without children", () => {
       const data = [
         "Alan",
         "Ben",
