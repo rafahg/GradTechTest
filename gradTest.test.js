@@ -1,6 +1,13 @@
 function createMenuData(data) {
-  
-  
+  const dataSplit = data.map((item) => item.split('/'));
+
+  let formattedData = [
+    {
+      title: dataSplit[0][0],
+      data: [dataSplit[0][1]]
+    }
+  ];
+ return formattedData;
 }
 
 
