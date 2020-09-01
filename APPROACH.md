@@ -38,6 +38,6 @@ My first approach to this challenge was to obtain ,in the end, an organised list
 
 Once the data-list was refined and sorted, I have obtained the desired outcome using a Js Object to display the given data, as requested.
 
-Once I obtained the solution I created a test with random data, not just the final one provided. That test was failing and made me doubt  my first idea. To rely just on organising the data as I was doing it was not useful. If a hyphotetical user provides real names like "Jonh/Peter" without using the "parent1child" format in it the code was not going to be able to deal with it.
+Once I obtained the solution I created a test with random data, not just the final one provided. That test was failing and made me doubt  my first idea. To rely just on organising the data as I was doing it was not useful. If a hyphotetical user provides real names like "Jonh/Peter" without using the "parent1child" format in it, the code was not going to be able to deal with it.
 
 My final approach has been to refine the data selecting only the parents with children. Doing that and obtaining an array of data containing sub-arrays of 2 elements ["parent", "child"],  the problem is reduced to an if - else selection within the array.
