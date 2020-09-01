@@ -10,9 +10,9 @@ function createMenuData(data) {
   for (let i = 1; i < dataSplit.length; i++) {
     const lastDataAdded = formattedData[formattedData.length -1];
     const nextDataToCompare = dataSplit[i];
-    if(lastDataAdded.title === nextDataToCompare[0]){
-      formattedData[formattedData.length -1].data.push(nextDataToCompare[1]);
-    } else {
+    if(lastDataAdded.title === nextDataToCompare[0] && nextDataToCompare.length === 2){
+      formattedData[formattedData.length -1].data.push(nextDataToCompare[1]) ;
+    } else if (nextDataToCompare.length === 2) {
       formattedData.push({
         title: nextDataToCompare[0],
         data: [nextDataToCompare[1]]
