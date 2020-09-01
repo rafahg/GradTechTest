@@ -11,7 +11,12 @@ function createMenuData(data) {
     const lastDataAdded = formattedData[formattedData.length -1];
     const nextDataToCompare = dataSplit[i];
     if(lastDataAdded.title === nextDataToCompare[0]){
-      formattedData[formattedData.length -1].data.push(nextDataToCompare[1])
+      formattedData[formattedData.length -1].data.push(nextDataToCompare[1]);
+    } else {
+      formattedData.push({
+        title: nextDataToCompare[0],
+        data: [nextDataToCompare[1]]
+      });
     }
   }
  return formattedData;
@@ -51,7 +56,7 @@ describe("menu Data Generator", () => {
     expect(actualResult).toMatchObject(expectedResult);
   });
   
-  it.skip("works with 2 parents, 2 childs, creating correct data structure", () => {
+  it("works with 2 parents, 2 childs, creating correct data structure", () => {
     const data = ["parent1/parent1child","parent1/parent1child2","parent2/parent2child","parent2/parent2child2"];
 
     const expectedResult = [
@@ -66,7 +71,7 @@ describe("menu Data Generator", () => {
     expect(actualResult).toMatchObject(expectedResult);
   });
   
-  it.skip("works with 2 parents given in any order, 2 childs, creating correct data structure", () => {
+  it("works with 2 parents given in any order, 2 childs, creating correct data structure", () => {
     const data = ["parent2/parent2child","parent1/parent1child2","parent1/parent1child","parent2/parent2child2"];
 
     const expectedResult = [
