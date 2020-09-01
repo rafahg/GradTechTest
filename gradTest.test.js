@@ -111,4 +111,29 @@ describe("menu Data Generator", () => {
       const actualResult = createMenuData(data);
       expect(actualResult).toMatchObject(expectedResult);
     });
+
+    it("creates correct data structure ", () => {
+      const data = [
+        "Ben/Paul",
+        "Carl/Peter",
+        "Alan/Peter",
+        "Carl/James",
+        "parent100/parent100child",
+        "Carl",
+        "Jonh/Sean",
+        "Ben/James"
+      ];
+  
+      const expectedResult = [
+        { title: "Alan",data: ["Peter"]},
+        { title: "Ben", data: ["James","Paul"] },
+        { title: "Carl", data: ["James","Peter"] },
+        { title: "Jonh", data: ["Sean"] },
+        { title: "parent100", data: ["parent100child"] }
+      ];
+  
+      const actualResult = createMenuData(data);
+      expect(actualResult).toMatchObject(expectedResult);
+    });
+
   });
