@@ -29,10 +29,15 @@ PARENT | 2 CHILDS
 2 PARENTS | 1 CHILD PER PARENT 
 SEVERAL PARENTS | SEVERAL CHILDS
 SEVERAL PARENTS UNORDERED | SEVERAL CHILDS
-SERVERAL PARENTS UNORDERED, PARENT WITHOUT CHILD| SEVERAL CHILDS
+SEVERAL PARENTS UNORDERED, PARENT WITHOUT CHILD| SEVERAL CHILDS
+PARENTS WITHOUT CHILDREN SORTED | SEVERAL CHILDS
 
 2.LOGICAL APPROACH.
 
-My approach to this challenge has been to obtain ,at the end, an organiced list of data to work with.
+My first approach to this challenge was to obtain ,at the end, an organiced list of data to work with.
 
 Once the data-list was refined and sorted, I have obtained the desired outcome using a Js Object to display the given data, as requested.
+
+Once i obtained the solution i created a test with random data, not just the final one provided. That test was failing and made me doubt of my first idea. To rely just in organicing the data as i was doing it was not useful. If a hiphotetical user provides real names like "Jonh/Peter" without using the "child" word in it the code was not going to be able to deal with it.
+
+My final approach was to refine the data selecting only the parents with children. Doing that, I was going to be able to obtain an array of data containing sub-arrays of 2 elements ["parent","child"], reducing the problem to a if - else selection within that array.
