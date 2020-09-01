@@ -1,5 +1,7 @@
 function createMenuData(data) {
-  const dataSplit = data.map((item) => item.split('/')).sort();
+  
+  
+  const dataSplit = refinedData.map((item) => item.split('/')).sort();
 
   let formattedData = [
     {
@@ -114,6 +116,8 @@ describe("menu Data Generator", () => {
 
     it("creates correct data structure ", () => {
       const data = [
+        "Alan",
+        "Ben",
         "Ben/Paul",
         "Carl/Peter",
         "Alan/Peter",
